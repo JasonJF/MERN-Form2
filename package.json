@@ -1,0 +1,32 @@
+{
+  "name": "MERN-Form",
+  "version": "1.0.0",
+  "description": "starting point for a MERN form.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",    
+    "start": "node server.js",
+    "client": "cd client && npm start",
+    "dev": "concurrently -n \"server,client\" -c \"red,green\" \"nodemon server.js\" \"npm run client\""
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JasonJF/MERN-Form2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JasonJF/MERN-Form2/issues"
+  },
+  "homepage": "https://github.com/JasonJF/MERN-Form2#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "concurrently": "^6.2.1",
+    "express": "^4.17.1",
+    "mongoose": "^6.0.2",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.12"
+  }
+}
