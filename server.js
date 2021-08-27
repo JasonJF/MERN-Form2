@@ -3,6 +3,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const path = require('path');
+// const cors = require('cors');
 
 const app = express();
 const PORT = process.env.PORT || 8080;
@@ -17,9 +18,14 @@ mongoose.connect('mongodb://localhost:27017/youtube',{
 
 mongoose.connection.on('connected', () => {
     console.log('Mongoose is connected!');
-})
+});
+
+//data parsing
+app.use(express.json());
+app.use(express.urlencoded({ extended: false}));
 
 //http request logger
+// app.use(cors());
 app.use(morgan('tiny'));
 app.use('/api', routes);
 
